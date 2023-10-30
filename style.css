@@ -1,0 +1,44 @@
+*:not(dialog) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+.board {
+  display: grid;
+  width: 300px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+  width: 100px;
+  aspect-ratio: 1;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.cell:nth-of-type(3n) {
+  border-right: none;
+}
+
+.cell:nth-of-type(7),
+.cell:nth-of-type(8),
+.cell:nth-of-type(9) {
+  border-bottom: none;
+}
