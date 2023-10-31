@@ -23,6 +23,7 @@ h1 {
 }
 
 .cell {
+  cursor: pointer;
   width: 100px;
   aspect-ratio: 1;
   border-right: 2px solid black;
