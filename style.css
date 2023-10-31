@@ -12,6 +12,10 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  font-weight: 200;
+}
+
 .board {
   display: grid;
   width: 300px;
