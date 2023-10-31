@@ -53,8 +53,8 @@ function GameController(
 ) {
   const board = Gameboard();
 
-  const playerOne = Player(playerOneName, 'X');
-  const playerTwo = Player(playerTwoName, 'O');
+  const playerOne = Player(playerOneName, 'x');
+  const playerTwo = Player(playerTwoName, 'o');
 
   let currentPlayer = playerOne;
 
@@ -171,11 +171,15 @@ function ScreenController() {
     for (let row = 0; row < gameBoard.length; row++) {
       for (let column = 0; column < gameBoard[row].length; column++) {
         const cell = createCell(row, column);
-        cell.textContent = gameBoard[row][column];
+        cell.className = `cell ${gameBoard[row][column]}`;
         boardDiv.appendChild(cell);
       }
     }
   };
+
+  boardDiv.addEventListener('mouseover', (event) => {
+    boardDiv.className = `board ${game.getCurrentPlayer().token}`;
+  });
 
   boardDiv.addEventListener('click', (event) => {
     if (!event.target.closest('.cell')) return;
